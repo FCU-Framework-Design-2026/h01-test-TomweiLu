@@ -7,6 +7,7 @@ public class Chess {
     private int weight; // 棋子的大小(權重)，用來判斷誰可以吃誰 (例如 將=7, 士=6 ... 兵=1)
     private String side; // 陣營，例如 "紅" 或 "黑"
     private int loc; // 位置。由於暗棋是在 4x8 的棋盤上，可以用 0~31 的一維數字，或是交由 ChessGame 處理，這裡先保留。
+    private boolean isFlipped;
 
     // 2. 建構子 (Constructor)：在創建物件時初始化屬性
     public Chess(String name, int weight, String side, int loc) {
@@ -14,6 +15,7 @@ public class Chess {
         this.weight = weight;
         this.side = side;
         this.loc = loc;
+        this.isFlipped = false;
     }
 
     // 3. toString 方法：決定當印出這個物件時 (例如 System.out.println(chess)) 要顯示的文字
@@ -38,9 +40,20 @@ public class Chess {
     public int getLoc() {
         return loc;
     }
-
+    
+    public boolean isFlipped() {
+        return isFlipped;
+    }
+    
+    public static void main(String[] args) {
+	
+    }
     // Setter (允許修改位置)
     public void setLoc(int loc) {
         this.loc = loc;
+    }
+    
+    public void flip() {
+        this.isFlipped = !this.isFlipped;
     }
 }
