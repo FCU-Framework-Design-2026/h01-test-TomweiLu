@@ -11,8 +11,6 @@ public class ChessGame extends AbstractGame {
     public ChessGame() {
         board = new Chess[4][8];
         generateChess(); // 在建構子裡呼叫，這樣遊戲一開始就會有棋子
-        
-        showAllChess();
     }
 
     public void generateChess() {
